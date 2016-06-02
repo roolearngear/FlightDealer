@@ -1,0 +1,53 @@
+<!doctype html>
+<!--
+ This page is shown when the extension button is clicked, because the
+ "browser_action" field in manifest.json contains the "default_popup" key with
+ value "popup.html".
+ -->
+<html>
+  <head>
+    <title>I need a flight RIGHT NOW!!!!</title>
+    <meta charset="utf-8">
+    <style>
+      body {
+        font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
+        font-size: 100%;
+        width: 300px;
+      }
+      
+    </style>
+
+    <!--
+      - JavaScript and HTML must be in separate files: see our Content Security
+      - Policy documentation[1] for details and explanation.
+      -
+      - [1]: https://developer.chrome.com/extensions/contentSecurityPolicy
+     -->
+    <script src="popup.js"></script>
+  </head>
+  <body>
+    <div class="content">
+      <span>從</span>
+      <select id="departure">
+        <option value="TSA">松山</option>
+        <option value="MZG" selected="true">馬公</option>
+        <option value="KHH">高雄</option>
+        <option value="RMQ">臺中</option>
+        option
+      </select>
+      <span>到</span>
+      <select id="arrival">
+        <option value="TSA">松山</option>
+        <option value="MZG">馬公</option>
+        <option value="KHH" selected="true">高雄</option>
+        <option value="RMQ">臺中</option>
+      </select>
+      <input type="date" id="bookdate" placeholder="2014-09-18">
+      <button type="submit" id="submitButton">search!</button>
+      <button type="submit" id="skyscanner">Good Luck!</button>
+      <div id="description"></div>
+      <table id="answer" border="1"></table>
+    </div>
+  </body>
+</html>
+
